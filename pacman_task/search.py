@@ -190,6 +190,7 @@ def multiFoodSearchHeuristic(state, problem=None):
     """
     A heuristic function for the problem of multiple food search
     """
+    # TODO 21
     position, foodGrid = state
     heuristic = 0
     nonvisited = foodGrid.asList()

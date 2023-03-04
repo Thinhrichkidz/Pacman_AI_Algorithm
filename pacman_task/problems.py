@@ -85,6 +85,7 @@ class SingleFoodSearchProblem(SearchProblem):
     """
 
     def __init__(self, startingGameState):
+         # TODO 1
         self.start = (startingGameState.getPacmanPosition(), startingGameState.getFood())
         self.walls = startingGameState.getWalls()
         self.startingGameState = startingGameState
@@ -93,12 +94,15 @@ class SingleFoodSearchProblem(SearchProblem):
         self.startingGameState = startingGameState
 
     def getStartState(self):
+        # TODO 2
         return self.start
 
     def isGoalState(self, state):
+        # TODO 3
         return state[1].count() == 0
 
     def getSuccessors(self, state):
+        # TODO 4
         "Returns successor states, the actions they require, and a cost of 1."
         successors = []
         self._expanded += 1 # DO NOT CHANGE
@@ -113,6 +117,7 @@ class SingleFoodSearchProblem(SearchProblem):
         return successors
 
     def getCostOfActions(self, actions):
+        # TODO 5
         """Returns the cost of a particular sequence of actions.  If those actions
         include an illegal move, return 999999"""
         x,y= self.getStartState()[0]
@@ -134,6 +139,7 @@ class MultiFoodSearchProblem(SearchProblem):
     """
 
     def __init__(self, startingGameState):
+        # TODO 6
         self.start = (startingGameState.getPacmanPosition(), startingGameState.getFood())
         self.walls = startingGameState.getWalls()
         self.startingGameState = startingGameState
@@ -142,12 +148,15 @@ class MultiFoodSearchProblem(SearchProblem):
         self.startingGameState = startingGameState
 
     def getStartState(self):
+        # TODO 7
         return self.start
 
     def isGoalState(self, state):
+        # TODO 8
         return state[1].count() == 0
 
     def getSuccessors(self, state):
+        # TODO 9
         "Returns successor states, the actions they require, and a cost of 1."
         successors = []
         self._expanded += 1 # DO NOT CHANGE
@@ -162,6 +171,7 @@ class MultiFoodSearchProblem(SearchProblem):
         return successors
 
     def getCostOfActions(self, actions):
+        # TODO 10
         """Returns the cost of a particular sequence of actions.  If those actions
         include an illegal move, return 999999"""
         x,y= self.getStartState()[0]

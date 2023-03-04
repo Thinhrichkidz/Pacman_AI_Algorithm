@@ -36,6 +36,7 @@ class SearchAgent(Agent):
 
         state: a GameState object (pacman.py)
         """
+        # TODO 11
         if self.searchFunction == None: raise Exception("No search function provided for SearchAgent")
         starttime = time.time()
         problem = self.searchType(state) # Makes a new search problem
@@ -52,6 +53,7 @@ class SearchAgent(Agent):
 
         state: a GameState object (pacman.py)
         """
+        # TODO 12
         if 'actionIndex' not in dir(self): self.actionIndex = 0
         i = self.actionIndex
         self.actionIndex += 1
@@ -99,6 +101,7 @@ class BFSFoodSearchAgent(SearchAgent):
         print('[SearchAgent] using problem type ' + prob)
 
 class UCSFoodSearchAgent(SearchAgent):
+    # TODO 14
     def __init__(self, fn='uniformCostSearch', prob='MultiFoodSearchProblem', heuristic='nullHeuristic'):
         # Warning: some advanced Python magic is employed below to find the right functions and problems
 
@@ -128,6 +131,7 @@ class UCSFoodSearchAgent(SearchAgent):
 
 
 class DFSFoodSearchAgent(SearchAgent):
+    # TODO 15
     #Big Modify
     def __init__(self, fn='depthFirstSearch', prob='MultiFoodSearchProblem', heuristic='nullHeuristic'):
         # Warning: some advanced Python magic is employed below to find the right functions and problems
@@ -157,13 +161,14 @@ class DFSFoodSearchAgent(SearchAgent):
         print('[SearchAgent] using problem type ' + prob)
 
 # class AStarFoodSearchAgent(SearchAgent):
-#     # TODO 16
+#    
 #     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
 #     def __init__(self):
 #       self.searchFunction = lambda prob: search.aStarSearch(prob, search.SingleFoodSearchHeuristic)
 #       self.searchType = SingleFoodSearchProblem
 
 class AStarFoodSearchAgent(SearchAgent):
+    # TODO 16
     def __init__(self, fn='aStarSearch', prob='MultiFoodSearchProblem', heuristic='FoodSearchHeuristic'):
         # Warning: some advanced Python magic is employed below to find the right functions and problems
 
