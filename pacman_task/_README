@@ -1,14 +1,14 @@
 Problem: SingleFoodSearchProblem, MultiFoodSearchProblem
-Targeted Algorithms: BFS, DFS, UCS, A*
+Targeted Algorithms: BFS, DFS, UCS, A\*
 Working files:
-    problems.py        : SingleFoodSearchProblem, MultiFoodSearchProblem
-    searchAgents.py    : BFSFoodSearchAgent, DFSFoodSearchAgent, UCSFoodSearchAgent, AStarFoodSearchAgent
-    search.py          : depthFirstSearch, breadthFirstSearch, uniformCostSearch, aStarSearch,
-                         singleFoodSearchHeuristic, multiFoodSearchHeuristic
-    util.py            : Stack, Queue, PriorityQueue
+problems.py : SingleFoodSearchProblem, MultiFoodSearchProblem
+searchAgents.py : BFSFoodSearchAgent, DFSFoodSearchAgent, UCSFoodSearchAgent, AStarFoodSearchAgent
+search.py : depthFirstSearch, breadthFirstSearch, uniformCostSearch, aStarSearch,
+singleFoodSearchHeuristic, multiFoodSearchHeuristic
+util.py : Stack, Queue, PriorityQueue
 
-Command: 
-Run pacman.py -l <choose_in_layout_file> -p<BFSFoodSearchAgent/DFSFoodSearchAgent/UCSFoodSearchAgent>
+Command:
+python pacman.py -l layout_file -p search agent -z zoom level
 Multi Food layout requires more time to compute the answer so be patient!!!
 
 Added Files:
