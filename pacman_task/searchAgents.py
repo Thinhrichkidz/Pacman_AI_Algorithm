@@ -3,6 +3,7 @@ import time
 import search
 import problems
 import util
+# import generateMaze
 
 from search import SingleFoodSearchHeuristic
 from problems import SingleFoodSearchProblem
