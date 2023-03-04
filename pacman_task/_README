@@ -6,3 +6,10 @@ Working files:
     search.py          : depthFirstSearch, breadthFirstSearch, uniformCostSearch, aStarSearch,
                          singleFoodSearchHeuristic, multiFoodSearchHeuristic
     util.py            : Stack, Queue, PriorityQueue
+
+Command: 
+Run pacman.py -l <choose_in_layout_file> -p<BFSFoodSearchAgent/DFSFoodSearchAgent/UCSFoodSearchAgent>
+Multi Food layout requires more time to compute the answer so be patient!!!
+
+Added Files:
+GenerateMaze.py : Generate MultiFood Layout.
