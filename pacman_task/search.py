@@ -17,20 +17,7 @@ def depthFirstSearch(problem):
     '''
     return a path to the goal
     '''
-    # stack = Stack()
-    # visited = set()
-    # stack.push((problem.getStartState(), []))
-
-    # while not stack.isEmpty():
-    #     node, path = stack.pop()
-    #     if problem.isGoalState(node):
-    #         return path
-    #     if node not in visited:
-    #         visited.add(node)
-    #         for successor, action, cost in problem.getSuccessors(node):
-    #             new_path = path + [action]
-    #             stack.push((successor, new_path))
-    # return None
+    
     # TODO 17
     
     visited = {}
@@ -112,21 +99,7 @@ def uniformCostSearch(problem):
     '''
     return a path to the goal
     '''
-    # pq = PriorityQueue()
-    # visited = set()
-    # pq.push((problem.getStartState(), [], 0), 0)
-
-    # while not pq.isEmpty():
-    #     node, path, cost = pq.pop()
-    #     if problem.isGoalState(node):
-    #         return path
-    #     if node not in visited:
-    #         visited.add(node)
-    #         for successor, action, stepCost in problem.getSuccessors(node):
-    #             new_path = path + [action]
-    #             new_cost = cost + stepCost
-    #             pq.push((successor, new_path, new_cost), new_cost)
-    # return None
+    
     # TODO 19
     
     visited = {}
@@ -174,43 +147,11 @@ def nullHeuristic(state, problem=None):
     """
     return 0
 
-
-# =============================================================================
-# def singleFoodSearchHeuristic(state, problem=None):
-#     """
-#     A heuristic function for the problem of single food search
-#     """
-#     # TODO 20
-#     position, foodGrid = state
-#     "*** YOUR CODE HERE ***"
-#     heuristic = 0
-#     nonvisited = foodGrid.asList()
-#     pos = state[0]
-#     distances = []
-#     
-#     if len(nonvisited) == 0:
-#         return heuristic
-# 
-#     for i in nonvisited:
-#         for j in nonvisited:
-#             d = mazeDistance(i, j, problem.startingGameState)
-#             distances.append((d, i, j))
-#     distances = sorted(distances, reverse = True)
-# 
-#     heuristic += distances[0][0]
-#     distanceTwo = []
-#     distanceTwo.append(mazeDistance(distances[0][1],pos, problem.startingGameState))
-#     distanceTwo.append(mazeDistance(distances[0][2],pos, problem.startingGameState))
-#     distanceTwo = sorted(distanceTwo)
-#     heuristic += distanceTwo[0]
-#     
-#     return heuristic
-# =============================================================================
-
 class SingleFoodSearchHeuristic:
     """
     A heuristic for the problem of single food search
     """
+     # TODO 20
 
     def __init__(self, problem):
         self.problem = problem

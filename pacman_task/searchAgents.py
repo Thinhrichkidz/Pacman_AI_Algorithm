@@ -156,10 +156,39 @@ class DFSFoodSearchAgent(SearchAgent):
         self.searchType = globals()[prob]
         print('[SearchAgent] using problem type ' + prob)
 
+# class AStarFoodSearchAgent(SearchAgent):
+#     # TODO 16
+#     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
+#     def __init__(self):
+#       self.searchFunction = lambda prob: search.aStarSearch(prob, search.SingleFoodSearchHeuristic)
+#       self.searchType = SingleFoodSearchProblem
+
 class AStarFoodSearchAgent(SearchAgent):
-    # TODO 16
-    "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
-    def __init__(self):
-      self.searchFunction = lambda prob: search.aStarSearch(prob, search.SingleFoodSearchHeuristic)
-      self.searchType = SingleFoodSearchProblem
+    def __init__(self, fn='aStarSearch', prob='MultiFoodSearchProblem', heuristic='FoodSearchHeuristic'):
+        # Warning: some advanced Python magic is employed below to find the right functions and problems
+
+        # Get the search function from the name and heuristic
+        if fn not in dir(search):
+            raise AttributeError(fn + ' is not a search function in search.py.')
+        func = getattr(search, fn)
+        if 'heuristic' not in func.__code__.co_varnames:
+            print('[SearchAgent] using function ' + fn)
+            self.searchFunction = func
+        else:
+            if heuristic in globals().keys():
+                heur = globals()[heuristic]
+            elif heuristic in dir(search):
+                heur = getattr(search, heuristic)
+            else:
+                raise AttributeError(heuristic + ' is not a function in searchAgents.py or search.py.')
+            print('[SearchAgent] using function %s and heuristic %s' % (fn, heuristic))
+            # Note: this bit of Python trickery combines the search algorithm and the heuristic
+            self.searchFunction = lambda x: func(x, heuristic=heur)
+
+        # Get the search problem type from the name
+        if prob not in globals().keys() or not prob.endswith('Problem'):
+            raise AttributeError(prob + ' is not a search problem type in SearchAgents.py.')
+        self.searchType = globals()[prob]
+        print('[SearchAgent] using problem type ' + prob)
+
 
