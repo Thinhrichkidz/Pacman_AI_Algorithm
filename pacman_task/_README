@@ -6,3 +6,7 @@ Working files:
     search.py          : depthFirstSearch, breadthFirstSearch, uniformCostSearch, aStarSearch,
                          singleFoodSearchHeuristic, multiFoodSearchHeuristic
     util.py            : Stack, Queue, PriorityQueue
+
+Command: run pacman.py -l <bigMaze/mediumClassic/mediumClassic/mediumMaze/miniMaxClassic/smallMaze> -p <DFSFoodSearchAgent/BFSFoodSearchAgent/UCSFoodSearchAgent>
+
+NOTE: Layout multi co thoi gian xu li lau can cho doi de agent co the hoat dong!
